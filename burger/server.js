@@ -1,33 +1,24 @@
-var express = require("express");
-var bodyParser = require("body-parser");
-var exphbs = require("express-handlebars");
-var mysql = require("mysql");
+const express = require("express");
+cost bodyParser = require("body-parser");
+const exphbs = require("express-handlebars");
 
-var app = express();
-var PORT = process.env.PORT || 8080;
+const router = require("./controllers/burgers-controller.js")
+
+const app = express();
+const PORT = process.env.PORT || 8080;
 
 app.listen(PORT, () => {
   console.log("Listening..");
 });
 
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static("public"));
+
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-var connection = mysql.createConnection({
-  host: "localhost",
-  user: "root",
-  password: "",
-  database: "burgers_db"
-});
+app.use(router);
 
-connection.connect( (err) => {
-  if(err) {
-      console.error("erro connecting: " + err.stack);
-      return;
-  }
-  console.log("connected as id" + connection.threadId);
-});
 
