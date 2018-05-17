@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>FriendFinder</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+  <div class="container">
+    <h1 class="text-center">Take the Survey</h1>
+    <hr>
+
+    <form role="form" id="quiz">
+      <h2>Tell us about yourself first</h2>
+      <div class="form-group">
+        <label for="user">Name: (Required)</label>
+        <input type="text" class="form-control" id="name">
+      </div>
+      <div class="form-group">
+        <label for="upic">Link your photo: (Required)</label>
+        <input type="text" class="form-control" id="pic">
+      </div>
+      <hr>
+
+      <h2>Provide responses to the following statements:</h2>
+
+      <div class="row col-xs-12">
+        <h3>Question 1</h3>
+        <h4>How long does it take you to feel comfortable with a new person?</h4>
+        <div class="form-group col-xs-3">
+          <select class="form-control" id="q1">
+            <option value="1">1 (a few days)</option>
+            <option value="2">2 (1 week or so)</option>
+            <option value="3">3 (1 month)</option>
+            <option value="4">4 (1-3 months)</option>
+            <option value="5">5 (more than 3 months)</option>
+          </select>
+        </div>
+
+        <div class="row col-xs-12">
+          <h3>Question 2</h3>
+          <h4>What is the first thing you mostly say when you meet a person for the first time?</h4>
+          <div class="form-group col-xs-3">
+            <select class="form-control" id="q2">
+              <option value="1">1 (hobbies)</option>
+              <option value="2">2 (job)</option>
+              <option value="3">3 (family)</option>
+              <option value="4">4 (likes/dislikes)</option>
+              <option value="5">5 (future plans)</option>
+            </select>
+          </div>
+
+          <div class="row col-xs-12">
+            <h3>Question 3</h3>
+            <h4>What's your ice-breaker idea?</h4>
+            <div class="form-group col-xs-3">
+              <select class="form-control" id="q3">
+                <option value="1">1 (food)</option>
+                <option value="2">2 (movies)</option>
+                <option value="3">3 (hobbies)</option>
+                <option value="4">4 (travel)</option>
+                <option value="5">5 (workout)</option>
+              </select>
+            </div>
+
+            <div class="row col-xs-12">
+              <h3>Question 4</h3>
+              <h4>Are you a social person? How often do you spend with your friends?</h4>
+              <div class="form-group col-xs-3">
+                <select class="form-control" id="q4">
+                  <option value="1">1 (a few times/week)</option>
+                  <option value="2">2 (1/week)</option>
+                  <option value="3">3 (a few times/month)</option>
+                  <option value="4">4 (every 1-3 months)</option>
+                  <option value="5">5 (a few times a year)</option>
+                </select>
+              </div>
+
+              <div class="row col-xs-12">
+                <h3>Question 5</h3>
+                <h4>What's the most important thing in your life?</h4>
+                <div class="form-group col-xs-3">
+                  <select class="form-control" id="q5">
+                    <option value="1">1 (vacation)</option>
+                    <option value="2">2 (health)</option>
+                    <option value="3">3 (finance)</option>
+                    <option value="4">4 (happiness)</option>
+                    <option value="5">5 (relationship)</option>
+                  </select>
+                </div>
+
+                <div class="row col-xs-12">
+                  <h3>Question 6</h3>
+                  <h4>How long does it take you to feel comfortable with a new job?</h4>
+                  <div class="form-group col-xs-3">
+                    <select class="form-control" id="q6">
+                      <option value="1">1 (a few days)</option>
+                      <option value="2">2 (1 week or so)</option>
+                      <option value="3">3 (less than 1 month)</option>
+                      <option value="4">4 (1-3 months)</option>
+                      <option value="5">5 (more than 3 months)</option>
+                    </select>
+                  </div>
+
+                  <div class="row col-xs-12">
+                    <h3>Question 7</h3>
+                    <h4>What do you most remember about family as a kid?</h4>
+                    <div class="form-group col-xs-3">
+                      <select class="form-control" id="q7">
+                        <option value="1">1 (trips)</option>
+                        <option value="2">2 (sports)</option>
+                        <option value="3">3 (dinner)</option>
+                        <option value="4">4 (events)</option>
+                        <option value="5">5 (others)</option>
+                      </select>
+                    </div>
+
+                    <div class="row col-xs-12">
+                      <h3>Question 8</h3>
+                      <h4>Which day of the year are you most likely to spend with your family?</h4>
+                      <div class="form-group col-xs-3">
+                        <select class="form-control" id="q8">
+                          <option value="1">1 (birthday)</option>
+                          <option value="2">2 (New Year)</option>
+                          <option value="3">3 (Christmas)</option>
+                          <option value="4">4 (Thanksgiving)</option>
+                          <option value="5">5 (Others)</option>
+                        </select>
+                      </div>
+
+                      <div class="row col-xs-12">
+                        <h3>Question 9</h3>
+                        <h4>What characteristics have you inherited most from your parent(guy: dad, girl: mom)?</h4>
+                        <div class="form-group col-xs-3">
+                          <select class="form-control" id="q9">
+                            <option value="1">1 (habits)</option>
+                            <option value="2">2 (personality)</option>
+                            <option value="3">3 (appearance)</option>
+                            <option value="4">4 (lifestyle)</option>
+                            <option value="5">5 (others)</option>
+                          </select>
+                        </div>
+
+                        <div class="row col-xs-12">
+                          <h3>Question 10</h3>
+                          <h4>What are you most proud of yourself?</h4>
+                          <div class="form-group col-xs-3">
+                            <select class="form-control" id="q10">
+                              <option value="1">1 (financial stability)</option>
+                              <option value="2">2 (health)</option>
+                              <option value="3">3 (emotional stability)</option>
+                              <option value="4">4 (social life)</option>
+                              <option value="5">5 (jobs/future plans)</option>
+                            </select>
+                          </div>
+                        </div>
+                        <button type="button" class="btn btn-info btn-block" id="submit">Let's find out!</button>
+    </form>
+
+    <!-- Modal -->
+    <div class="modal fade" id="friendModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Your best match:
+              <span class="text-center" id="bestMatch"></span>
+            </h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modalBody text-center">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer text-center">
+      <p>Youngmi Lee &copy;</p>
+    </div>
+
+
+
+    </div>
+
+    <!-- <script src="js/jquery.barrating.min.js"></script> -->
+
+    <script type="text/javascript">
+
+      // $(function() {
+      //     $('.form-control').barrating({
+      //       theme: 'bars-square'
+      //     });
+      //  });
+
+      $("#submit").on("click", function () {
+
+        if ($("#name").val() === "") {
+          alert("Please enter a name");
+        }
+        else if ($("#pic").val() === "") {
+          alert("Please enter a link to photo");
+        }
+
+        else {
+          var answerArray = [];
+          for (var i = 1; i < 11; i++) {
+            console.log("#q" + i);
+            answerArray.push($("#q" + i).val());
+            console.log("answerArray:", answerArray);
+          }
+
+          var newFriend = {
+            name: $("#name").val(),
+            photo: $("#pic").val(),
+            scores: answerArray
+          }
+          console.log("newFriend on survey.html", newFriend);
+
+          $.post("/api/friends", newFriend).then((data) => {
+            console.log("data.name***************", data.name);
+
+            var matchName = "<h4>" + data.name + "</h4>";
+            var matchPic = "<img width = '300px' src=" + data.photo + ">";
+
+
+            $("#friendModal").modal("show");
+            $("#bestMatch").html(matchName);
+            $(".modalBody").html(matchPic);
+            $("#quiz")[0].reset();
+
+          });
+
+        }
+
+      });
+
+    </script>
+
+</body>
+
+</html>
