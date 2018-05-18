@@ -1,6 +1,6 @@
 const express = require("express");
-const router = express.Router();
 const burger = require("../models/burger.js");
+const router = express.Router();
 
 router.get("/", (req, res) => {
   burger.all( (err, data) => {
@@ -12,16 +12,16 @@ router.get("/", (req, res) => {
 });
 
 router.post("/burgers", (req, res) => {
-  burger.create(req.body.burger, (err, data) => {
+  burger.create(["burger_name, devoured"], [req.body.burger_name, req.body.devoured], (err, result) => {
     if(err) {
       return res.status(500).end();
     }
-    res.json({ id: data.insertId });
+    res.json({ id: result.insertId });
   });
 });
 
 router.get("/burgers", (req, res) => {
-  burger.all( (err, data) => {
+  burger.all( (err, result) => {
    if(err) {
      return res.status(500).end();
    } 
@@ -30,11 +30,14 @@ router.get("/burgers", (req, res) => {
 });
 
 router.put("/burgers/:id", (req, res) => {
-  burger.update(req.body.burger, req.params.id, (err, data) => {
+  var condition = "id= " + req.params.id;
+  console.log("condition", condition);
+
+  cat.update({devoured: req.body.devoured}, condition, (err, result) => {
     if(err) {
       return res.status(500).end();
     }
-    if(data.changedRows === 0) {
+    if(result.changedRows === 0) {
       return res.status(404).end();
     }
     res.status(200).end();
@@ -42,16 +45,21 @@ router.put("/burgers/:id", (req, res) => {
 });
 
 router.delete("/burgers/:id", (req, res) => {
-  burger.delete(req.params.id, (err, data) => {
+  var condition = "id= " + req.params.id;
+
+  burger.delete(condition, (err, result) => {
     if(err) {
       return res.status(500).end();
     }
-    if(data.changedRows === 0) {
+    if(result.changedRows === 0) {
       return res.status(404).end();
     }
     res.status(200).end();
   });
 });
 
+
 module.exports = router;
+
+
 
